@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>move_mouse_animated (AgileGuiTesting.rb)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File AgileGuiTesting.rb, line 102</span>
+<span class="ruby-keyword kw">def</span> <span class="ruby-identifier">move_mouse_animated</span> (<span class="ruby-identifier">x</span>,<span class="ruby-identifier">y</span>)
+
+  <span class="ruby-comment cmt"># get the old auto_delay, then set it to what we</span>
+  <span class="ruby-comment cmt"># want it to be</span>
+  <span class="ruby-identifier">old_auto_delay</span> = <span class="ruby-ivar">@robot</span>.<span class="ruby-identifier">getAutoDelay</span>
+  <span class="ruby-ivar">@robot</span>.<span class="ruby-identifier">setAutoDelay</span>(<span class="ruby-value">15</span>)
+
+  <span class="ruby-identifier">p</span> = <span class="ruby-constant">MouseInfo</span>.<span class="ruby-identifier">getPointerInfo</span>().<span class="ruby-identifier">getLocation</span>()
+  <span class="ruby-identifier">x_last</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">x</span>
+  <span class="ruby-identifier">y_last</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">y</span>
+
+  <span class="ruby-identifier">x_dist</span> = <span class="ruby-identifier">x</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">x_last</span>
+  <span class="ruby-identifier">y_dist</span> = <span class="ruby-identifier">y</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">y_last</span>
+  <span class="ruby-identifier">x_new</span> = <span class="ruby-identifier">x_last</span>
+  <span class="ruby-identifier">y_new</span> = <span class="ruby-identifier">y_last</span>
+  <span class="ruby-identifier">steps</span> = <span class="ruby-value">50</span>
+  (<span class="ruby-value">1</span><span class="ruby-operator">...</span><span class="ruby-identifier">steps</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">x_new</span> = <span class="ruby-identifier">x_new</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">x_dist</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">steps</span>.<span class="ruby-identifier">to_f</span>
+    <span class="ruby-identifier">y_new</span> = <span class="ruby-identifier">y_new</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">y_dist</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">steps</span>.<span class="ruby-identifier">to_f</span>
+    <span class="ruby-ivar">@robot</span>.<span class="ruby-identifier">mouseMove</span>(<span class="ruby-identifier">x_new</span>,<span class="ruby-identifier">y_new</span>);
+  }
+  <span class="ruby-comment cmt"># just to be sure we get to the destination</span>
+  <span class="ruby-ivar">@robot</span>.<span class="ruby-identifier">mouseMove</span>(<span class="ruby-identifier">x</span>,<span class="ruby-identifier">y</span>);
+  <span class="ruby-identifier">sleep</span> <span class="ruby-value">0</span><span class="ruby-value">.5</span>
+  
+  <span class="ruby-comment cmt"># return to the previous auto_delay</span>
+  <span class="ruby-ivar">@robot</span>.<span class="ruby-identifier">setAutoDelay</span>(<span class="ruby-identifier">old_auto_delay</span>)
+<span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>apple (AGTMacOsX.rb)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File AGTMacOsX.rb, line 30</span>
+<span class="ruby-keyword kw">def</span> <span class="ruby-identifier">apple</span> (<span class="ruby-identifier">the_key</span>)
+  <span class="ruby-identifier">apple_fixnum</span>(<span class="ruby-identifier">the_key</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">the_key</span>.<span class="ruby-identifier">instance_of?</span> <span class="ruby-constant">Fixnum</span>
+  <span class="ruby-identifier">apple_string</span>(<span class="ruby-identifier">the_key</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">the_key</span>.<span class="ruby-identifier">instance_of?</span> <span class="ruby-constant">String</span>
+  <span class="ruby-comment cmt"># could do this cleaner with 'overload' package, see:</span>
+  <span class="ruby-comment cmt"># http://www.artima.com/forums/flat.jsp?forum=123&amp;thread=155354</span>
+<span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

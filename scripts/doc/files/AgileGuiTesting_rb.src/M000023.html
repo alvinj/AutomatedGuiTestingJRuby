@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>wait_for_xycolor_to_go_away (AgileGuiTesting.rb)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File AgileGuiTesting.rb, line 425</span>
+<span class="ruby-keyword kw">def</span> <span class="ruby-identifier">wait_for_xycolor_to_go_away</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">data</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;invalid # of args to wait_for_xycolor&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">3</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">7</span>
+
+  <span class="ruby-identifier">pause</span> = <span class="ruby-value">30</span>
+  <span class="ruby-identifier">x</span> = <span class="ruby-identifier">data</span>[<span class="ruby-value">0</span>]
+  <span class="ruby-identifier">y</span> = <span class="ruby-identifier">data</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">5</span>
+    <span class="ruby-identifier">r</span> = <span class="ruby-identifier">data</span>[<span class="ruby-value">2</span>]
+    <span class="ruby-identifier">g</span> = <span class="ruby-identifier">data</span>[<span class="ruby-value">3</span>]
+    <span class="ruby-identifier">b</span> = <span class="ruby-identifier">data</span>[<span class="ruby-value">4</span>]
+    <span class="ruby-identifier">pause</span> = <span class="ruby-identifier">data</span>[<span class="ruby-value">5</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">6</span>
+    <span class="ruby-identifier">exception_mode</span> = <span class="ruby-identifier">data</span>[<span class="ruby-value">6</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">7</span>
+  <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">3</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">4</span>
+    <span class="ruby-identifier">colorname</span> = <span class="ruby-identifier">data</span>[<span class="ruby-value">2</span>]
+    <span class="ruby-comment cmt"># colorname should be an array w/ 3 elements</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;invalid # of elements in 'colorname' array in wait_for_xycolor&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">colorname</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">!=</span> <span class="ruby-value">3</span>
+    <span class="ruby-identifier">r</span> = <span class="ruby-identifier">colorname</span>[<span class="ruby-value">0</span>]
+    <span class="ruby-identifier">g</span> = <span class="ruby-identifier">colorname</span>[<span class="ruby-value">1</span>]
+    <span class="ruby-identifier">b</span> = <span class="ruby-identifier">colorname</span>[<span class="ruby-value">2</span>]
+    <span class="ruby-identifier">pause</span> = <span class="ruby-identifier">data</span>[<span class="ruby-value">3</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">4</span>
+  <span class="ruby-keyword kw">end</span>
+
+  <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">wait_for_color_to_go_away</span>(<span class="ruby-identifier">x</span>,<span class="ruby-identifier">y</span>,<span class="ruby-identifier">r</span>,<span class="ruby-identifier">g</span>,<span class="ruby-identifier">b</span>,<span class="ruby-identifier">pause</span>)
+    <span class="ruby-identifier">sleep</span> <span class="ruby-value">0</span><span class="ruby-value">.25</span>
+  <span class="ruby-keyword kw">else</span>
+    <span class="ruby-comment cmt"># program should die here</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;     ***************************************&quot;</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;     ********** DIED WHILE WAITING *********&quot;</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;     ***************************************&quot;</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Waited #{pause} seconds, but did not find the color&quot;</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;(#{r}/#{g}/#{b}) at (#{x}, #{y}), quitting&quot;</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;Here are the comments you provided (in order):&quot;</span>
+    <span class="ruby-identifier">write_comments</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">exception_mode</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;COLOR (#{r}/#{g}/#{b}) at (#{x}, #{y}) NOT FOUND&quot;</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">exit</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+<span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

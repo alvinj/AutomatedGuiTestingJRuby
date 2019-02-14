@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>find_image_click_coordinates (AGTImageRecognition.rb)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File AGTImageRecognition.rb, line 42</span>
+<span class="ruby-keyword kw">def</span> <span class="ruby-identifier">find_image_click_coordinates</span>(<span class="ruby-identifier">image_file_name</span>)
+  <span class="ruby-identifier">image_file</span> = <span class="ruby-identifier">open_image_file</span>(<span class="ruby-identifier">image_file_name</span>)
+  <span class="ruby-identifier">screen_image</span> = <span class="ruby-identifier">create_screen_shot</span>
+  <span class="ruby-keyword kw">if</span> <span class="ruby-constant">FindSmallImageInLarge</span>.<span class="ruby-identifier">findImageOptimized</span>(<span class="ruby-identifier">image_file</span>, <span class="ruby-identifier">screen_image</span>)
+    <span class="ruby-keyword kw">return</span> [<span class="ruby-constant">FindSmallImageInLarge</span>.<span class="ruby-identifier">getXClick</span>, <span class="ruby-constant">FindSmallImageInLarge</span>.<span class="ruby-identifier">getYClick</span>]
+  <span class="ruby-keyword kw">else</span>
+    <span class="ruby-keyword kw">return</span> [<span class="ruby-value">-1</span>, <span class="ruby-value">-1</span>]
+  <span class="ruby-keyword kw">end</span>
+<span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

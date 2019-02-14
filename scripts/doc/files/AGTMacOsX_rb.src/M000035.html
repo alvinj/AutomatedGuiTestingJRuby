@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>apple_string (AGTMacOsX.rb)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File AGTMacOsX.rb, line 61</span>
+<span class="ruby-keyword kw">def</span> <span class="ruby-identifier">apple_string</span> (<span class="ruby-identifier">c</span>)
+  <span class="ruby-comment cmt"># essentially converts the string we're given to a character,</span>
+  <span class="ruby-comment cmt"># then to the proper keycode</span>
+  <span class="ruby-identifier">i</span> = <span class="ruby-identifier">c</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_i</span>
+  <span class="ruby-comment cmt"># notes: i really needs to be [65-90] (decimal)</span>
+  <span class="ruby-comment cmt"># [A-Z] == [65-90]</span>
+  <span class="ruby-comment cmt"># [a-z] == [97-122]</span>
+  <span class="ruby-comment cmt"># need to subtract 32 b/c java takes only the 26 cap</span>
+  <span class="ruby-comment cmt"># char's. need to add 'shift' to really get caps tho.</span>
+  <span class="ruby-identifier">i</span> = <span class="ruby-identifier">i</span> <span class="ruby-operator">-</span> <span class="ruby-value">32</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">96</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">123</span>
+  <span class="ruby-identifier">apple_fixnum</span>(<span class="ruby-identifier">i</span>)
+<span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

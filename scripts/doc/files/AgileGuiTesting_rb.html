@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: AgileGuiTesting.rb</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>AgileGuiTesting.rb</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>AgileGuiTesting.rb
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Fri May 28 21:16:44 -0800 2010</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+    <div id="requires-list">
+      <h3 class="section-bar">Required files</h3>
+
+      <div class="name-list">
+      java&nbsp;&nbsp;
+      <a href="AGTPixelColorValidator_rb.html">AGTPixelColorValidator</a>&nbsp;&nbsp;
+      <a href="AGTKeys_rb.html">AGTKeys</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000019">c</a>&nbsp;&nbsp;
+      <a href="#M000011">click</a>&nbsp;&nbsp;
+      <a href="#M000025">colors_are_equal</a>&nbsp;&nbsp;
+      <a href="#M000018">comment</a>&nbsp;&nbsp;
+      <a href="#M000026">ctrl</a>&nbsp;&nbsp;
+      <a href="#M000004">done</a>&nbsp;&nbsp;
+      <a href="#M000012">doubleclick</a>&nbsp;&nbsp;
+      <a href="#M000005">echo</a>&nbsp;&nbsp;
+      <a href="#M000028">enter</a>&nbsp;&nbsp;
+      <a href="#M000029">esc</a>&nbsp;&nbsp;
+      <a href="#M000008">get_elapsed_time</a>&nbsp;&nbsp;
+      <a href="#M000017">get_formatted_time</a>&nbsp;&nbsp;
+      <a href="#M000024">get_pixel_color</a>&nbsp;&nbsp;
+      <a href="#M000009">move_mouse</a>&nbsp;&nbsp;
+      <a href="#M000010">move_mouse_animated</a>&nbsp;&nbsp;
+      <a href="#M000013">shift_type_keycode</a>&nbsp;&nbsp;
+      <a href="#M000006">start_timer</a>&nbsp;&nbsp;
+      <a href="#M000007">stop_timer</a>&nbsp;&nbsp;
+      <a href="#M000027">tab</a>&nbsp;&nbsp;
+      <a href="#M000016">type</a>&nbsp;&nbsp;
+      <a href="#M000015">type_keycode</a>&nbsp;&nbsp;
+      <a href="#M000014">type_keys</a>&nbsp;&nbsp;
+      <a href="#M000021">wait</a>&nbsp;&nbsp;
+      <a href="#M000022">wait_for_xycolor</a>&nbsp;&nbsp;
+      <a href="#M000023">wait_for_xycolor_to_go_away</a>&nbsp;&nbsp;
+      <a href="#M000020">write_comments</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000019" class="method-detail">
+        <a name="M000019"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000019.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000019.html');return false;">
+          <span class="method-name">c</span><span class="method-args">(s)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This is an alias for the &quot;<a
+href="AgileGuiTesting_rb.html#M000018">comment</a>&quot; method, so you can
+just <a href="AgileGuiTesting_rb.html#M000016">type</a> &quot;<a
+href="AgileGuiTesting_rb.html#M000019">c</a>&quot; instead of &quot;<a
+href="AgileGuiTesting_rb.html#M000018">comment</a>&quot;.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000011" class="method-detail">
+        <a name="M000011"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000011.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000011.html');return false;">
+          <span class="method-name">click</span><span class="method-args">(x, y, delay=250, do_animation=true)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Does a single-<a href="AgileGuiTesting_rb.html#M000011">click</a> at the
+given x/y coordinates. The &quot;delay&quot; is the time between the
+mousePress and mouseRelease method calls. The &quot;do_animation&quot;
+field lets you specify whether you want to animate the mouse movement from
+the current location to the new x/y coordinates, prior to the <a
+href="AgileGuiTesting_rb.html#M000011">click</a>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000025" class="method-detail">
+        <a name="M000025"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000025.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000025.html');return false;">
+          <span class="method-name">colors_are_equal</span><span class="method-args">(color, r, g, b)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if the colors are the same (well, almost the same).
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000018" class="method-detail">
+        <a name="M000018"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000018.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000018.html');return false;">
+          <span class="method-name">comment</span><span class="method-args">(s)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The <a href="AgileGuiTesting_rb.html#M000018">comment</a> method lets the
+tester adds a <a href="AgileGuiTesting_rb.html#M000018">comment</a> to a
+stack of comments. This does nothing visible, unless a test fails, in which
+case the stack of comments will be printed for debugging purposes.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000026" class="method-detail">
+        <a name="M000026"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000026.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000026.html');return false;">
+          <span class="method-name">ctrl</span><span class="method-args">(key_code)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Simulates pressing the [Control] key in combination with the key code you
+pass in. For instance, on Mac OS X, this works with VK_LEFT, VK_UP,
+VK_RIGHT, and VK_DOWN to move through the Mac Spaces.
+</p>
+<p>
+Specifically, this method expects an integer key code, and not a string or
+character. I may modify this method to let you pass in an int, string, or
+character in the future, though I need to look and see if this will cause
+problems. For instance, if you <a
+href="AgileGuiTesting_rb.html#M000016">type</a> &quot;<a
+href="AgileGuiTesting_rb.html#M000026">ctrl</a> 9&quot;, do you really want
+[Ctrl][9], or do you want [Ctrl][Tab], where the ASCII value for
+</p>
+<dl>
+<dt>Tab</dt><dd>is 9?
+
+</dd>
+</dl>
+<p>
+As a practical matter, I don&#8216;t use the [Ctrl] much on Mac OS X, so I
+haven&#8216;t given this much thought. However, it needs to be consisten
+with other methods, like apple/command, alt, shift, etc. (Sorry for
+rambling, I&#8216;m tired atm.)
+</p>
+<p>
+TODO decide on this implementation
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000004" class="method-detail">
+        <a name="M000004"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000004.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000004.html');return false;">
+          <span class="method-name">done</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+You can call this method at the end of each script to show that you script
+completed successfully. This is useful when you run a series of scripts,
+one after the other.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000012" class="method-detail">
+        <a name="M000012"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000012.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000012.html');return false;">
+          <span class="method-name">doubleclick</span><span class="method-args">(x, y)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Perform a mouse double-<a href="AgileGuiTesting_rb.html#M000011">click</a>
+operations at the given x/y coordinates. TODO - this currently does not let
+the user choose a &quot;delay&quot; or &quot;do_animation&quot;.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000005" class="method-detail">
+        <a name="M000005"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000005.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000005.html');return false;">
+          <span class="method-name">echo</span><span class="method-args">(data)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Write a string out to the console (stdout). Useful for debugging, and also
+for documenting pre-conditions.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000028" class="method-detail">
+        <a name="M000028"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000028.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000028.html');return false;">
+          <span class="method-name">enter</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+A convenience method for typing an [Enter] character.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000029" class="method-detail">
+        <a name="M000029"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000029.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000029.html');return false;">
+          <span class="method-name">esc</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+A convenience method for typing an [Escape] character.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000008" class="method-detail">
+        <a name="M000008"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000008.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000008.html');return false;">
+          <span class="method-name">get_elapsed_time</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Not really needed by the tester. This will probably become a private
+method.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000017" class="method-detail">
+        <a name="M000017"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000017.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000017.html');return false;">
+          <span class="method-name">get_formatted_time</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Not really needed by a tester, this will probably become private in the
+future.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000024" class="method-detail">
+        <a name="M000024"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000024.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000024.html');return false;">
+          <span class="method-name">get_pixel_color</span><span class="method-args">(x,y)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Gets the RGB colors at the given pixel location. Returns a Color object so
+you can use c.getRed, c.getGreen, c.getBlue to get the values.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000009" class="method-detail">
+        <a name="M000009"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000009.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000009.html');return false;">
+          <span class="method-name">move_mouse</span><span class="method-args">(x, y)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Move the mouse to the given x/y coordinates. Does not use animation, and
+also does not <a href="AgileGuiTesting_rb.html#M000011">click</a> at this
+point. Useful when you want to move the mouse out of the way, and will
+likely be used later when drag and drop capabilities are added.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000010" class="method-detail">
+        <a name="M000010"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000010.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000010.html');return false;">
+          <span class="method-name">move_mouse_animated</span><span class="method-args">(x,y)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The same as mouse_move, but animates the mouse cursor movement by beginning
+at the current mouse position, and then moving smoothly to the given x/y
+coordinates.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000013" class="method-detail">
+        <a name="M000013"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000013.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000013.html');return false;">
+          <span class="method-name">shift_type_keycode</span><span class="method-args">(i)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+TODO This method needs to become private. For the most part, a tester
+shouldn&#8216;t need access to this. Characters like &#8217;:&#8217;
+can&#8216;t be typed directly. You must use the character beneath them on
+the keyboard, and add in the [Shift] key. See the shift_key_hash hash for
+keys that can&#8216;t be typed directly.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000006" class="method-detail">
+        <a name="M000006"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000006.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000006.html');return false;">
+          <span class="method-name">start_timer</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Not really needed by the tester. This will probably become a private
+method.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000007" class="method-detail">
+        <a name="M000007"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000007.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000007.html');return false;">
+          <span class="method-name">stop_timer</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Not really needed by the tester. This will probably become a private
+method.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000027" class="method-detail">
+        <a name="M000027"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000027.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000027.html');return false;">
+          <span class="method-name">tab</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+A convenience method for typing a [Tab] character.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000016" class="method-detail">
+        <a name="M000016"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000016.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000016.html');return false;">
+          <span class="method-name">type</span><span class="method-args">(data)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+TODO - REFACTOR this method Types a string of data, wherever the input
+focus is currently located. Usage is like this: <a
+href="AgileGuiTesting_rb.html#M000016">type</a> &#8216;<a
+href="http://www.devdaily.com\n">www.devdaily.com\n</a>&#8216;
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000015" class="method-detail">
+        <a name="M000015"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000015.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000015.html');return false;">
+          <span class="method-name">type_keycode</span><span class="method-args">(char_as_int)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000014" class="method-detail">
+        <a name="M000014"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000014.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000014.html');return false;">
+          <span class="method-name">type_keys</span><span class="method-args">(data)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Type data represented by integers or bytes, such as VK_TAB, or any other
+VK_* character. Usage is like this: <a
+href="AgileGuiTesting_rb.html#M000014">type_keys</a> VK_TAB
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000021" class="method-detail">
+        <a name="M000021"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000021.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000021.html');return false;">
+          <span class="method-name">wait</span><span class="method-args">(time_ms)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Tells the system to <a href="AgileGuiTesting_rb.html#M000021">wait</a>,
+similar to the Java Thread.sleep method. Time is in milliseconds.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000022" class="method-detail">
+        <a name="M000022"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000022.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000022.html');return false;">
+          <span class="method-name">wait_for_xycolor</span><span class="method-args">(*data)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This method means &quot;Wait for the given RGB color at the given x/y
+coordinates. If the color does not appear withing the given <a
+href="AgileGuiTesting_rb.html#M000021">wait</a>-time, exit the script (or
+throw an exception if the exception_mode paramter is supplied).&quot;
+</p>
+<p>
+specify parameters like this:
+</p>
+<pre>
+  wait_for_xycolor x, y, r, g, b, &lt;wait-time-in-seconds&gt;
+  wait_for_xycolor x, y, r, g, b, wait-time-in-seconds, exception_mode
+  wait_for_xycolor x, y, colorname, &lt;wait-time-in-seconds&gt;
+</pre>
+<p>
+&#8216;exception_mode&#8217; is a new param. set it to true if you want
+this method to throw an exception instead of exiting.
+</p>
+<p>
+if &#8216;colorname&#8217; is used it needs to be an array with three
+elements, like this:
+</p>
+<pre>
+   WIN2K_BG_COLOR = [233, 234, 235]
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000023" class="method-detail">
+        <a name="M000023"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000023.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000023.html');return false;">
+          <span class="method-name">wait_for_xycolor_to_go_away</span><span class="method-args">(*data)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Very similar to the <a
+href="AgileGuiTesting_rb.html#M000022">wait_for_xycolor</a> method, except
+this method waits for the given color at the given x/y location to go away.
+Useful for situations like waiting for a dialog to go away. TODO refactor
+this method, as it is very similar to the previous method.
+</p>
+<pre>
+  wait_for_xycolor_to_go_away x, y, r, g, b, &lt;wait-time-in-seconds&gt;
+  wait_for_xycolor_to_go_away x, y, r, g, b, wait-time-in-seconds, exception_mode
+  wait_for_xycolor_to_go_away x, y, colorname, &lt;wait-time-in-seconds&gt;
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000020" class="method-detail">
+        <a name="M000020"></a>
+
+        <div class="method-heading">
+          <a href="AgileGuiTesting_rb.src/M000020.html" target="Code" class="method-signature"
+            onclick="popupCode('AgileGuiTesting_rb.src/M000020.html');return false;">
+          <span class="method-name">write_comments</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This method writes the stack of comments, and will probably become a
+private method in the future.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

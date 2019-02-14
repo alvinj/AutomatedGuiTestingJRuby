@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>test_file_open (6GoogleChrome.rb)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File 6GoogleChrome.rb, line 23</span>
+<span class="ruby-keyword kw">def</span> <span class="ruby-identifier">test_file_open</span>
+  <span class="ruby-identifier">c</span> <span class="ruby-value str">'test the File | Open process'</span>
+  <span class="ruby-identifier">c</span> <span class="ruby-value str">'open a new tab'</span>
+  <span class="ruby-identifier">apple</span> <span class="ruby-value str">'t'</span>
+
+  <span class="ruby-identifier">c</span> <span class="ruby-value str">'open a file'</span>
+  <span class="ruby-identifier">apple</span> <span class="ruby-value str">'o'</span>
+  <span class="ruby-identifier">wait</span> <span class="ruby-value">1000</span>
+  <span class="ruby-identifier">type</span> <span class="ruby-value str">'/Users/Al/DevDaily/AgileGuiTesting/scripts/support/blue.html\n'</span>
+  <span class="ruby-identifier">wait</span> <span class="ruby-value">500</span>
+  <span class="ruby-identifier">type</span> <span class="ruby-value str">'\n'</span>
+
+  <span class="ruby-identifier">wait_for_xycolor</span> <span class="ruby-value">220</span>, <span class="ruby-value">280</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">255</span>
+  <span class="ruby-identifier">wait</span> <span class="ruby-value">1000</span>
+
+  <span class="ruby-identifier">c</span> <span class="ruby-value str">'close the tab we created'</span>
+  <span class="ruby-identifier">wait</span> <span class="ruby-value">250</span>
+  <span class="ruby-identifier">apple</span> <span class="ruby-value str">'w'</span>
+<span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

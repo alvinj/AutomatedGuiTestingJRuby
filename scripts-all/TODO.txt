@@ -1,0 +1,60 @@
+
+* fix image recognition
+   * something about my tool captures the images properly???
+
+* tool for creating/cropping images?
+   * create build for my image capture tool
+
+* distribute
+   * AGTPlayer.jar
+   * AgileGuiTesting.rb
+   * AGTImageRecognition.rb
+   * AGTPixelColorValidator.rb
+   * AGTKeys.rb
+   * need to understand the "ruby classpath" here
+   * jar up my ImageRecognition code
+* test the image recognition
+* fix this XYLocator
+* give away the screen capture code here as well?
+* how did i create those docs before? they are nice.
+* get everything working with new names, and easy to deploy
+  * require 'path/to/mycode.jar'
+
+* make sure i've included gui testing code (pixel stuff)
+* create 1+ videos to demo
+
+* add 'control' method (ctrl)
+* add 'alt' method (ctrl)
+* click
+* double_click
+
+---++ Follow the Abbot API
+
+http://abbot.sourceforge.net/doc/api/abbot/tester/Robot.html
+
+click
+
+close_window
+maximize_window
+minimize_window
+
+drag
+drag_over ?
+drop
+
+focus
+
+get_text?
+copy?
+paste?
+jitter?
+
+---++ DONE
+
+~ add 'c' method for comments
+~ get comment/c method working with *data
+~ figure out method overloading
+~ add 'apple' method
+
+
+
